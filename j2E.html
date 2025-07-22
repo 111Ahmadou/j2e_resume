@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographie : Les Concepts Clés de JEE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F9FB;
+            color: #1E293B;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow::after {
+            content: '▼';
+            font-size: 2rem;
+            color: #FFA600;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#003F5C] mb-2">Déchiffrer Java Enterprise Edition (JEE)</h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Une exploration visuelle des concepts fondamentaux qui rendent JEE puissant pour les applications d'entreprise.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="challenges">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C]">Le Défi des Applications d'Entreprise</h2>
+                    <p class="mt-2 text-slate-500">Développer une application à grande échelle implique de jongler avec de multiples exigences critiques.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#FF6361]">
+                        <h3 class="text-2xl font-bold text-[#FF6361]">Performance</h3>
+                        <p class="mt-2 text-slate-600">Assurer la rapidité, la disponibilité constante et la tolérance aux pannes.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#BC5090]">
+                        <h3 class="text-2xl font-bold text-[#BC5090]">Sécurité</h3>
+                        <p class="mt-2 text-slate-600">Protéger les données de l'entreprise et des utilisateurs contre les menaces.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#58508D]">
+                        <h3 class="text-2xl font-bold text-[#58508D]">Maintenance</h3>
+                        <p class="mt-2 text-slate-600">Permettre des mises à jour et des évolutions faciles sans tout casser.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#FFA600]">
+                        <h3 class="text-2xl font-bold text-[#FFA600]">Coût</h3>
+                        <p class="mt-2 text-slate-600">Maîtriser le budget de développement et d'exploitation sur le long terme.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solution">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h2 class="text-3xl font-bold text-[#003F5C] mb-4">La Solution : Une Plateforme Standardisée</h2>
+                        <p class="text-slate-600 mb-4">JEE n'est pas un simple outil, mais une norme qui définit un standard pour construire des applications robustes. Il fournit un ensemble d'APIs et un environnement d'exécution pour gérer la complexité inhérente aux systèmes d'entreprise.</p>
+                        <p class="text-slate-600">L'objectif est de permettre aux développeurs de se concentrer sur la logique métier plutôt que sur les problèmes techniques récurrents.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#003F5C]">Les Piliers d'une Application JEE</h3>
+                        <div class="chart-container h-64 md:h-80">
+                            <canvas id="jeeGoalsChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-slate-500 mt-4">JEE vise à équilibrer ces quatre piliers pour des applications d'entreprise réussies.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="architecture">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C]">L'Anatomie d'une Application : L'Architecture Multi-Couches</h2>
+                    <p class="mt-2 text-slate-500 max-w-3xl mx-auto">Pour une meilleure organisation et maintenance, les applications JEE sont découpées en couches logiques, chacune avec une responsabilité claire.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-md text-center mb-4 border-l-4 border-[#003F5C]">
+                        <h3 class="font-bold text-lg text-[#003F5C]">1. Couche Client (Client Tier)</h3>
+                        <p class="text-sm text-slate-600">L'interface utilisateur : navigateur web, application mobile ou de bureau.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-md text-center mb-4 border-l-4 border-[#58508D]">
+                        <h3 class="font-bold text-lg text-[#58508D]">2. Couche Web (Web Tier)</h3>
+                        <p class="text-sm text-slate-600">Gère les requêtes HTTP. Composants typiques : <span class="font-mono bg-slate-100 px-1 rounded">Servlets</span> & <span class="font-mono bg-slate-100 px-1 rounded">JSP</span>.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-md text-center mb-4 border-l-4 border-[#BC5090]">
+                        <h3 class="font-bold text-lg text-[#BC5090]">3. Couche Métier (Business Tier)</h3>
+                        <p class="text-sm text-slate-600">Le cœur de l'application, contient la logique métier. Composants : <span class="font-mono bg-slate-100 px-1 rounded">Enterprise JavaBeans (EJB)</span>.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-md text-center border-l-4 border-[#FF6361]">
+                        <h3 class="font-bold text-lg text-[#FF6361]">4. Couche d'Intégration (EIS Tier)</h3>
+                        <p class="text-sm text-slate-600">Communique avec les systèmes externes comme les bases de données (via <span class="font-mono bg-slate-100 px-1 rounded">JDBC</span>) ou les services de messagerie (<span class="font-mono bg-slate-100 px-1 rounded">JMS</span>).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mvc">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C]">Le Cerveau de l'Opération : Le Modèle MVC</h2>
+                    <p class="mt-2 text-slate-500 max-w-3xl mx-auto">Le Modèle-Vue-Contrôleur est un patron de conception qui sépare les données, l'interface utilisateur et la logique de contrôle.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                         <h3 class="text-xl font-bold text-center mb-4 text-[#003F5C]">Flux de Travail MVC</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <span class="flex-shrink-0 bg-[#003F5C] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
+                                <p class="text-slate-600">L'utilisateur interagit avec la <span class="font-bold">Vue</span>, qui envoie une requête au <span class="font-bold">Contrôleur</span> (une Servlet).</p>
+                            </div>
+                             <div class="flex items-center gap-4">
+                                <span class="flex-shrink-0 bg-[#58508D] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span>
+                                <p class="text-slate-600">Le <span class="font-bold">Contrôleur</span> traite la requête, interagit avec le <span class="font-bold">Modèle</span> (les données/logique métier).</p>
+                            </div>
+                             <div class="flex items-center gap-4">
+                                <span class="flex-shrink-0 bg-[#BC5090] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span>
+                                <p class="text-slate-600">Le <span class="font-bold">Modèle</span> est mis à jour et renvoie les nouvelles données au <span class="font-bold">Contrôleur</span>.</p>
+                            </div>
+                             <div class="flex items-center gap-4">
+                                <span class="flex-shrink-0 bg-[#FF6361] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span>
+                                <p class="text-slate-600">Le <span class="font-bold">Contrôleur</span> sélectionne la <span class="font-bold">Vue</span> appropriée (une JSP) et lui transmet les données pour l'affichage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#003F5C]">Bénéfices de la Séparation des Rôles</h3>
+                        <div class="chart-container">
+                            <canvas id="mvcBenefitsChart"></canvas>
+                        </div>
+                         <p class="text-center text-sm text-slate-500 mt-4">MVC favorise un code plus propre, plus facile à maintenir et à faire évoluer.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="aop">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C]">La Magie de l'AOP : Gérer les Préoccupations Transverses</h2>
+                    <p class="mt-2 text-slate-500 max-w-3xl mx-auto">La Programmation Orientée Aspect (AOP) permet d'isoler des fonctionnalités techniques (comme les logs ou la sécurité) de la logique métier principale.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#003F5C]">Domaines d'Application de l'AOP</h3>
+                        <div class="chart-container">
+                            <canvas id="aopChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-slate-500 mt-4">L'AOP injecte du code aux points spécifiés sans modifier le code métier source.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg font-mono text-sm">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#003F5C] font-sans">Exemple de "Tissage" d'Aspect</h3>
+                        <div class="bg-slate-800 text-white p-4 rounded-lg">
+                            <pre><code><span class="text-pink-400">// Code de l'Aspect (ex: log)</span>
+@Before("execution(* *.main(..))")
+public void beforeMain() {
+  System.out.println("Avant Main");
+}</code></pre>
+                        </div>
+                        <div class="text-center text-2xl my-2 text-[#FFA600]">⬇️</div>
+                        <div class="bg-slate-200 p-4 rounded-lg relative border-2 border-dashed border-slate-400">
+                             <div class="absolute -top-3 -left-3 bg-[#FFA600] text-white text-xs font-bold px-2 py-1 rounded">TISSAGE</div>
+                            <pre><code><span class="text-cyan-600">// Code Métier</span>
+public class Application {
+  public static void main(String[] args) {
+    System.out.println("Main message...");
+  }
+}</code></pre>
+                        </div>
+                        <div class="text-center text-2xl my-2 text-[#FFA600]">⬇️</div>
+                         <div class="bg-slate-800 text-white p-4 rounded-lg">
+                            <pre><code><span class="text-pink-400">// Résultat après "tissage"</span>
+public class Application {
+  public static void main(String[] args) {
+    <span class="text-yellow-300">// Code de l'aspect injecté !</span>
+    System.out.println("Avant Main"); 
+    System.out.println("Main message...");
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-slate-200">
+            <p class="text-slate-500">Ahmadou Cheikhou Niang</p>
+        </footer>
+
+    </div>
+
+    <script>
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (typeof label !== 'string' || label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = '';
+                }
+                currentLine += (currentLine ? ' ' : '') + word;
+            }
+            if (currentLine) {
+                lines.push(currentLine);
+            }
+            return lines;
+        };
+        
+        const globalChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: '#1E293B'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        const palette = ['#003F5C', '#58508D', '#BC5090', '#FF6361', '#FFA600'];
+
+        const jeeGoalsCtx = document.getElementById('jeeGoalsChart').getContext('2d');
+        new Chart(jeeGoalsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Robuste', 'Sécurisé', 'Performant', 'Maintenable'],
+                datasets: [{
+                    label: 'Objectifs de JEE',
+                    data: [25, 25, 25, 25],
+                    backgroundColor: palette,
+                    borderColor: '#F7F9FB',
+                    borderWidth: 4
+                }]
+            },
+            options: { ...globalChartOptions }
+        });
+
+        const mvcBenefitsCtx = document.getElementById('mvcBenefitsChart').getContext('2d');
+        const mvcLabels = ['Couplage Faible', 'Réutilisabilité', 'Maintenance Simplifiée', 'Développement Parallèle'].map(l => wrapLabel(l));
+        new Chart(mvcBenefitsCtx, {
+            type: 'bar',
+            data: {
+                labels: mvcLabels,
+                datasets: [{
+                    label: 'Niveau d\'amélioration avec MVC',
+                    data: [90, 85, 95, 75],
+                    backgroundColor: palette.slice(1,5),
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...globalChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                           color: '#e2e8f0'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const aopCtx = document.getElementById('aopChart').getContext('2d');
+        new Chart(aopCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Journalisation', 'Sécurité', 'Transactions', 'Mise en Cache', 'Monitoring'],
+                datasets: [{
+                    label: 'Impact de l\'AOP',
+                    data: [90, 85, 95, 70, 80],
+                    backgroundColor: 'rgba(88, 80, 141, 0.2)',
+                    borderColor: '#58508D',
+                    pointBackgroundColor: '#58508D',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#58508D'
+                }]
+            },
+            options: {
+                ...globalChartOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        grid: { color: '#e2e8f0' },
+                        pointLabels: { color: '#1E293B', font: { size: 12 } },
+                        ticks: {
+                            backdropColor: '#F7F9FB',
+                            color: '#64748b'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
